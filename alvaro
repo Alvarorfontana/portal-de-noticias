@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contexto Político | Noticias de Autoridad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #cc0000;
+            --text-black: #111111;
+            --bg-white: #ffffff;
+            --border-gray: #e0e0e0;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        body { margin: 0; font-family: var(--font-sans); color: var(--text-black); background: var(--bg-white); line-height: 1.6; }
+
+        /* Header & Nav */
+        header { border-bottom: 3px solid var(--text-black); padding: 20px 0; text-align: center; }
+        .logo { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
+        nav { border-bottom: 1px solid var(--border-gray); padding: 10px 0; display: flex; justify-content: center; gap: 20px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700; }
+        nav a { text-decoration: none; color: var(--text-black); }
+
+        /* Breaking News */
+        .breaking-bar { background: var(--primary-red); color: white; padding: 5px 20px; font-size: 0.85rem; font-weight: bold; display: flex; align-items: center; }
+        .breaking-label { background: white; color: var(--primary-red); padding: 2px 8px; margin-right: 15px; text-transform: uppercase; }
+
+        /* Main Grid */
+        .container { max-width: 1200px; margin: 30px auto; display: grid; grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
+        @media (min-width: 992px) { .container { grid-template-columns: 2fr 1fr; } }
+
+        /* Top Story */
+        .kicker { color: var(--primary-red); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 5px; }
+        .top-story h1 { font-family: var(--font-serif); font-size: 3rem; line-height: 1.1; margin: 0 0 15px 0; }
+        .top-story img { width: 100%; height: auto; margin: 20px 0; }
+        .top-story p { font-size: 1.1rem; color: #444; max-width: 90%; }
+
+        /* Sidebar */
+        .sidebar { border-left: 1px solid var(--border-gray); padding-left: 20px; }
+        .sidebar h2 { font-size: 1.2rem; text-transform: uppercase; border-bottom: 2px solid var(--text-black); padding-bottom: 5px; margin-bottom: 20px; }
+        .news-item { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #f0f0f0; }
+        .news-item h3 { font-size: 1rem; margin: 0; font-family: var(--font-serif); }
+
+        /* Newsletter Widget */
+        .newsletter-box { background: #f9f9f9; padding: 20px; border: 1px solid var(--border-gray); margin-top: 40px; }
+        .newsletter-box input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; box-sizing: border-box; }
+        .newsletter-box button { background: var(--text-black); color: white; border: none; width: 100%; padding: 10px; cursor: pointer; font-weight: bold; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+    <div class="breaking-bar">
+        <span class="breaking-label">Último momento</span>
+        <span>Reunión clave en el Ministerio de Desregulación sobre el empleo público.</span>
+    </div>
+
+    <header>
+        <div class="logo">Contexto Político</div>
+    </header>
+
+    <nav>
+        <a href="#">Política</a>
+        <a href="#">Economía</a>
+        <a href="#">Discapacidad</a>
+        <a href="#">Internacionales</a>
+        <a href="#">Análisis</a>
+    </nav>
+
+    <main class="container">
+        <article class="top-story">
+            <span class="kicker">Políticas Públicas</span>
+            <h1>Nuevas estrategias para la inclusión laboral: el modelo de cuotas bajo la lupa</h1>
+            <p>Un análisis profundo sobre cómo las reformas actuales impactarán en el sector público y las áreas de discapacidad.</p>
+            <img src="https://via.placeholder.com/800x450" alt="Noticia Principal">
+            <p>La integración de sistemas de gestión moderna busca optimizar la transparencia en la administración nacional...</p>
+        </article>
+
+        <aside class="sidebar">
+            <h2>Lo más reciente</h2>
+            <div class="news-item">
+                <span class="kicker" style="font-size: 0.7rem;">Geopolítica</span>
+                <h3>Impacto del acuerdo Mercosur-UE en la industria local.</h3>
+            </div>
+            <div class="news-item">
+                <span class="kicker" style="font-size: 0.7rem;">Derechos</span>
+                <h3>Avances en la normativa de accesibilidad urbana en Argentina.</h3>
+            </div>
+
+            <div class="newsletter-box">
+                <h4>Suscribite al Newsletter</h4>
+                <p>Recibí el análisis de Alvaro Fontana cada mañana.</p>
+                <input type="email" placeholder="Tu correo electrónico">
+                <button>Unirme</button>
+            </div>
+        </aside>
+    </main>
+
+</body>
+</html>
