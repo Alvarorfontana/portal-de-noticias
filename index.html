@@ -3,260 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contexto Político | Estilo Politico</title>
+    <title>Contexto Político | Portada</title>
     <!-- Fuentes e Iconos -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
-        /* ESTILOS INTEGRADOS PARA EVITAR ERRORES DE CONFIGURACIÓN */
         :root {
             --black: #000000;
             --white: #ffffff;
             --navy: #001233;
             --red: #cc0000;
             --border: #e0e0e0;
-            --gray-bg: #f4f4f4;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: var(--white); 
-            color: var(--black);
-            line-height: 1.5;
-        }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
 
-        /* HEADER ESTILO POLITICO.COM */
-        .header {
-            border-bottom: 5px solid var(--black);
-            padding: 20px 5%;
-            text-align: left;
-        }
+        /* Cabecera */
+        header { border-bottom: 5px solid var(--black); padding: 20px 5%; }
+        .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1.5px; }
+        .social a { color: var(--black); margin-left: 15px; font-size: 1.2rem; }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+        nav { display: flex; gap: 20px; border-top: 1px solid var(--border); padding-top: 10px; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -1.5px;
-        }
+        /* Contenedor */
+        .container { display: grid; grid-template-columns: 1fr 300px; gap: 40px; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
 
-        .social-icons a {
-            color: var(--black);
-            margin-left: 15px;
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
+        /* Nota Principal */
+        .label { color: var(--red); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; display: block; margin-bottom: 10px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+        
+        .hero-img { width: 100%; height: 400px; overflow: hidden; margin-bottom: 20px; background: #000; border: 1px solid var(--border); }
+        .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 
-        .nav-bar {
-            border-top: 1px solid var(--border);
-            padding-top: 10px;
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-        }
+        .excerpt { font-size: 1.2rem; color: #333; margin-bottom: 25px; }
+        .cta-button { background: var(--navy); color: white; padding: 14px 28px; text-decoration: none; font-weight: 700; display: inline-block; text-transform: uppercase; font-size: 0.9rem; }
 
-        .nav-bar a {
-            text-decoration: none;
-            color: var(--black);
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
+        /* Lateral */
+        .sidebar { border-left: 1px solid var(--border); padding-left: 20px; }
+        .sidebar h2 { font-family: 'Playfair Display', serif; border-bottom: 3px solid var(--black); margin-bottom: 20px; padding-bottom: 5px; }
+        .side-item { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .side-item a { color: var(--navy); text-decoration: none; font-weight: 700; display: block; margin-top: 5px; }
 
-        /* CONTENEDOR PRINCIPAL - 2 COLUMNAS */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 300px; /* Columna principal y sidebar fija */
-            gap: 40px;
-        }
-
-        /* AJUSTE DE LA NOTA PRINCIPAL Y LA FOTO */
-        .main-article {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 40px;
-        }
-
-        .label {
-            color: var(--red);
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .main-article h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        /* CONTROL TOTAL DE LA IMAGEN: Aquí se achica */
-        .image-box {
-            width: 100%;
-            height: 400px; /* Altura máxima controlada */
-            background: #000;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Recorta la foto para que encaje sin deformarse */
-            object-position: center 20%; /* Centra en las caras */
-        }
-
-        .excerpt {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 25px;
-        }
-
-        .btn-link {
-            background: var(--navy);
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        /* SIDEBAR (DERECHA) */
-        .sidebar {
-            border-left: 1px solid var(--border);
-            padding-left: 20px;
-        }
-
-        .sidebar h2 {
-            font-family: 'Playfair Display', serif;
-            border-bottom: 3px solid var(--black);
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-            font-size: 1.5rem;
-        }
-
-        .side-item {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .side-item a {
-            color: var(--navy);
-            text-decoration: none;
-            font-weight: 700;
-            display: block;
-            margin-top: 5px;
-            font-size: 1.05rem;
-        }
-
-        /* COMENTARIOS */
-        .comments {
-            margin-top: 40px;
-            background: var(--gray-bg);
-            padding: 25px;
-        }
-
-        .comment-card {
-            background: white;
-            padding: 15px;
-            border: 1px solid var(--border);
-            margin-top: 15px;
-        }
-
-        /* RESPONSIVO PARA MÓVILES */
-        @media (max-width: 850px) {
+        @media (max-width: 900px) {
             .container { grid-template-columns: 1fr; }
             .sidebar { border-left: none; border-top: 3px solid var(--black); padding: 20px 0; }
-            .main-article h1 { font-size: 2rem; }
-            .image-box { height: 280px; }
+            h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
-<header class="header">
+<header>
     <div class="header-top">
         <div class="logo">Contexto Político</div>
-        <div class="social-icons">
+        <div class="social">
             <a href="#"><i class="fab fa-x-twitter"></i></a>
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
-    <nav class="nav-bar">
-        <a href="#">Política</a>
-        <a href="#">Sociedad</a>
-        <a href="#">Internacionales</a>
-        <a href="#">Gremiales</a>
-        <a href="#">Salud</a>
-        <a href="#">Opinión</a>
+    <nav>
+        <a href="#">Política</a><a href="#">Sociedad</a><a href="#">Internacionales</a>
+        <a href="#">Gremiales</a><a href="#">Salud</a><a href="#">Opinión</a>
     </nav>
 </header>
 
 <div class="container">
-    <!-- COLUMNA IZQUIERDA -->
     <main>
-        <article class="main-article">
-            <span class="label">Internacionales</span>
-            <h1>Viaje Histórico de Donald Trump a China y su Repercusión Internacional</h1>
+        <article>
+            <span class="label">Internacionales | Crisis Global</span>
+            <h1>Cumbre en Beijing: Trump busca el apoyo de Xi para sofocar el conflicto con Irán</h1>
             
-            <div class="image-box">
-                <img src="https://cdn.abcotvs.com/dip/images/19098750_051426-cc-ap-trump-xi-img.jpg" alt="Trump y Xi Jinping">
+            <div class="hero-img">
+                <img src="https://cdn.abcotvs.com/dip/images/19098750_051426-cc-ap-trump-xi-img.jpg" alt="Trump y Xi">
             </div>
 
             <p class="excerpt">
-                El encuentro en Beijing marca un antes y un después en las relaciones comerciales globales. Analistas advierten sobre el cambio en el eje de poder tras las reuniones privadas en el Gran Salón del Pueblo.
+                En una visita histórica marcada por la urgencia bélica en Medio Oriente, el mandatario estadounidense aterrizó en China para presionar por un alto el fuego en el Golfo...
             </p>
             
-            <div>
-                <a href="https://otra-web.com" class="btn-link" target="_blank">LEER NOTA COMPLETA</a>
-                <span style="margin-left:20px; color:#666;"><i class="far fa-comment"></i> 124 Comentarios</span>
-            </div>
+            <a href="nota-trump.html" class="cta-button" target="_blank">LEER NOTA COMPLETA</a>
         </article>
-
-        <section class="comments">
-            <h3>Comentarios de la nota</h3>
-            <div class="comment-card">
-                <strong>Juan Pérez:</strong>
-                <p>Excelente cobertura sobre el viaje presidencial.</p>
-            </div>
-        </section>
     </main>
 
-    <!-- COLUMNA DERECHA -->
     <aside class="sidebar">
         <h2>Lo Último</h2>
-        
         <div class="side-item">
             <span class="label">Política</span>
-            <a href="https://enlace-externo.com" target="_blank">Nuevos avances en la reforma judicial: ¿Qué esperar esta semana?</a>
+            <a href="#">Reforma judicial: Puntos clave del debate parlamentario.</a>
         </div>
-
         <div class="side-item">
             <span class="label">Gremiales</span>
-            <a href="https://enlace-externo.com" target="_blank">Sindicatos anuncian nuevas medidas tras el fracaso paritario.</a>
-        </div>
-
-        <div class="side-item">
-            <span class="label">Salud</span>
-            <a href="https://enlace-externo.com" target="_blank">Calendario de vacunación: Cronograma completo del AMBA.</a>
+            <a href="#">Sindicatos anuncian nuevas medidas tras el fracaso paritario.</a>
         </div>
     </aside>
 </div>
